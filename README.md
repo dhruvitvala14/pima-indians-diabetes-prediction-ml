@@ -1,78 +1,95 @@
-# Diabetes Prediction Using Gaussian Naive Bayes
+# 🩺 Diabetes Prediction using Gaussian Naive Bayes
 
-This project builds a Machine Learning model using the **Pima Indians Diabetes Dataset** to predict the likelihood of diabetes based on medical features. A **Gaussian Naive Bayes** classifier is trained and achieves an accuracy of **74%**.  
-A **Flask web app** with HTML/CSS allows users to input values and receive real-time predictions.
+A Machine Learning project that predicts whether a person is likely to have diabetes using the **Pima Indians Diabetes Dataset**.  
+The model is built using **Gaussian Naive Bayes** and deployed through a clean and simple **Flask web application** with an HTML/CSS front-end.
+
+---
+
+## 📊 Model Overview
+
+- **Algorithm:** Gaussian Naive Bayes  
+- **Accuracy:** ~74%  
+- **Dataset:** Pima Indians Diabetes Dataset  
+- **Goal:** Predict diabetes based on medical measurements such as glucose level, BMI, pregnancies, etc.
 
 ---
 
 ## 🚀 Features
-- Gaussian Naive Bayes model for diabetes prediction  
-- Flask web interface for user input and prediction  
-- Clean and simple HTML/CSS UI  
-- Model training script included  
+
+- Trained Naive Bayes ML model  
+- Interactive Flask web app for real-time predictions  
+- Simple and responsive HTML/CSS UI  
+- Clean project structure for easy understanding  
+- Includes dataset and model training script  
 
 ---
 
-## 🛠 Tech Stack
-- Python  
-- Scikit-learn  
-- Pandas / NumPy  
-- Flask  
-- HTML / CSS  
+## 🖼️ Screenshot
+
+![Home Page](screenshot/home.png)
 
 ---
 
 ## 📂 Project Structure
+
+```text
 project/
-│── main.py # Flask application
-│── train_model.py # Model training script
-│── diabetes.csv # Dataset
-│── model.pkl # Trained model file
+├── main.py               # Flask application
+├── train_model.py        # Model training script
+├── diabetes.csv          # Dataset
+├── model.pkl             # Trained model
 │
 ├── templates/
-│ └── index.html # Web interface
+│   └── index.html        # Web interface
 │
 ├── static/
-│ └── style.css # Stylesheet
+│   └── style.css         # Stylesheet
 │
 └── screenshot/
-└── home.png # App UI screenshot
+    └── home.png          # App UI screenshot
 
----
+🔧 Installation & Setup
+1️⃣ Clone the repository
 
-## 🔧 How to Run
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
 
-### 1. Install required packages
+2️⃣ Install dependencies
+
 pip install -r requirements.txt
 
-### 2. Train the model
+3️⃣ Train the model (optional)
+
 python train_model.py
 
+4️⃣ Run the Flask application
 
-### 3. Start the Flask server
 python main.py
 
+5️⃣ Open in browser
 
-Open the app in your browser:  
-**http://127.0.0.1:5000/**
+http://127.0.0.1:5000/
 
----
+🧠 How It Works
 
-## 📊 Model Performance
-- **Algorithm:** Gaussian Naive Bayes  
-- **Accuracy:** ~74%  
+User enters medical data (glucose, insulin, age, BMI, etc.).
+Data is forwarded to the Flask backend.
+The trained Naive Bayes model processes input and predicts diabetes probability.
+The result is displayed instantly on the web interface.
 
----
+🛠️ Tech Stack
 
-## 📸 Screenshot
-See: `/screenshot/home.png`
+Python
+Flask
+Scikit-learn
+NumPy
+Pandas
+HTML / CSS
 
----
+📜 License
 
-## 🤝 Contributions
-Contributions and suggestions are welcome!
+This project is open-source and available under the MIT License.
 
----
+🤝 Contributing
 
-## 📜 License
-This project is open-source.
+Pull requests and suggestions are always welcome!
