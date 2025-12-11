@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pima Indians Diabetes Prediction Model</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geom:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="main">
+        <div class="heading">
+            <h1>Diabetes Prediction Model</h1>
+        </div>
+        <div class="features">
+            <form action="{{url_for('predict')}}" method="post">
+                <div class="box"><input type="number" name="pregnancies" placeholder="Numbers of pregnancies" required="required"></div>
+                <div class="box"><input type="number" name="glucose" placeholder="Glucode Level" required="required"></div>
+                <div class="box"><input type="number" name="bloodpressure" placeholder="Your Blood Pressure" required="required"></div>
+                <div class="box"><input type="number" name="skinthickness" placeholder="Skin Thickness level" required="required"></div>
+                <div class="box"><input type="number" name="insulin" placeholder="Your Insulin" required="required"></div>
+                <div class="box"><input type="number" name="bmi" placeholder="Your BMI" required="required"></div>
+                <div class="box"><input type="number" name="age" placeholder="Current Age" required="required"></div>
+                <div class="button"><input type="submit" class="submit" value="Predict"></div>
+            </form>
+        </div>
+        <div class="label">
+            <h1>{{ predicted_text }}</h1>
+        </div>
+    </div>
+</body>
+</html>
