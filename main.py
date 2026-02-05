@@ -13,22 +13,26 @@ def home():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    pregnancies = float(request.form["pregnancies"])
-    glucose = float(request.form["glucose"])
-    bloodpressure = float(request.form["bloodpressure"])
-    skinthickness = float(request.form["skinthickness"])
-    insulin = float(request.form["insulin"])
-    bmi = float(request.form["bmi"])
-    age = float(request.form["age"])
+    import pandas as pd
 
-    features = np.array([[pregnancies, glucose, bloodpressure, skinthickness, insulin, bmi, age]])
+    data = {
+        "Pregnancies": float(request.form["pregnancies"]),
+        "Glucose": float(request.form["glucose"]),
+        "BloodPressure": float(request.form["bloodpressure"]),
+        "SkinThickness": float(request.form["skinthickness"]),
+        "Insulin": float(request.form["insulin"]),
+        "BMI": float(request.form["bmi"]),
+        "Age": float(request.form["age"]),
+    }
+
+    features = pd.DataFrame([data])
 
     prediction = model.predict(features)[0]
 
     if prediction == 0:
-        return render_template("index.html",predicted_text="You are safe")
-    if prediction == 1:
-        return render_template("index.html",predicted_text="You need treatment for diabetes")
-    
+        return render_template("index.html", predicted_text="You are safe")
+    else:
+        return render_template("index.html", predicted_text="You need treatment for diabetes")
+
 if __name__ == "__main__":
     app.run(debug=True)
